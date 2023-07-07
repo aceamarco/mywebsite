@@ -1,4 +1,4 @@
-This is my public repo for my personal website at [www.aceamarco.pythonanywhere.com](http://www.aceamarco.pythonanywhere.com).
+This is my public repo for my personal website at [aceamarco.pythonanywhere.com](http://aceamarco.pythonanywhere.com/).
 
 # Roadmap
 
