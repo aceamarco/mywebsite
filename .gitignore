@@ -1,0 +1,87 @@
+# Django project files
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+
+# Development
+*.sqlite3
+db.sqlite3
+
+# Secret keys
+*.env
+*.env.*
+*.secret_key
+
+# Static files
+/static/
+/public/
+
+# Media files
+/media/
+
+# Logs
+*.log
+
+# Temporary files
+*.swp
+*.swo
+*~
+
+# Environment-specific files
+.env.local
+.env.development
+.env.production
+.env.test
+.env.*.local
+.env.*.development
+.env.*.production
+.env.*.test
+
+# IDE-specific files
+.vscode/
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# Dependency directories
+/.venv/
+/venv/
+/env/
+/.env/
+
+# Compiled Python files
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+
+# Build artifacts
+/build/
+/dist/
+*.egg-info/
+*.egg
+*.egg-info
+*.pip
+*.whl
+
+# Coverage reports
+.coverage
+.coverage.*
+.htmlcov/
+
+# Unit test results
+.xml
+.html
+.coverage
+
+# Other generated files
+/README.html
+
+# Ignore the local development settings file
+/myproject/local_settings.py
+
+# Ignore sensitive information
+/secret.json
+
