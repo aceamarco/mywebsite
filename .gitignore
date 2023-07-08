@@ -14,7 +14,9 @@ db.sqlite3
 *.secret_key
 
 # Static files
-/static/
+/static/*
+!static/bio_pic.jpg
+!static/logo.svg
 /public/
 
 # Media files

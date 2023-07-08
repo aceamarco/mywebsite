@@ -1,0 +1,58 @@
+<!-- home.html -->
+{% extends 'base.html' %} {%block header %}
+
+<title>Marco Acea | Home</title>
+
+{% endblock header %} {% block content %}
+<!-- Bio Section -->
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="column">
+      <div class="bio">
+        {% load static %}
+        <img
+          src="{% static 'bio_pic.jpg' %}"
+          alt="Image 1"
+          alt="Bio Picture"
+          class="img-fluid rounded-circle"
+          width="200"
+        />
+      </div>
+    </div>
+  </div>
+  <div class="row justify-content-center">
+    <div class="column">
+      <div class="intro">
+        <h1>Hi, I'm Marco Acea</h1>
+        <p>Welcome to my website!</p>
+      </div>
+    </div>
+  </div>
+  <div class="row justify-content-center">
+    <div class="column">
+      <div class="icons">
+        <a href="mailto:aceamarco@gmail.com" class="btn btn-primary"
+          ><i class="fa fa-envelope"></i
+        ></a>
+        <a
+          href="https://www.linkedin.com/in/marco-acea/"
+          target="_blank"
+          class="btn btn-primary"
+          ><i class="fa fa-linkedin"></i
+        ></a>
+        <a
+          href="https://github.com/aceamarco"
+          target="_blank"
+          class="btn btn-primary"
+          ><i class="fa fa-github"></i
+        ></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Scripts -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+{% endblock %}
