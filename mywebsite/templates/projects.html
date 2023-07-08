@@ -1,0 +1,54 @@
+{% extends 'base.html' %} {% load static %} {% block header %}
+<title>Marco Acea | Projects</title>
+<style>
+  /* Custom CSS styles */
+  .project-card {
+    margin-bottom: 20px;
+  }
+</style>
+{%endblock header%} {% block content %}
+
+<div class="container">
+  <h1 style="margin-bottom: 3.5%">Projects</h1>
+  <div class="row">
+    <div class="col-lg-4 col-md-6">
+      <div class="card project-card">
+        <img
+          src="{% static 'Tepig_AF1_Demo.gif' %}"
+          class="card-img-top"
+          alt="Project
+        1"
+        />
+        <div class="card-body">
+          <h5 class="card-title">Pokemon Air Force 1's</h5>
+          <p class="card-text">
+            Create Air Force 1's inspired by your favorite Pokemon!
+          </p>
+          <a href="#" class="btn btn-primary">Learn More</a>
+        </div>
+      </div>
+    </div>
+    {% comment %} <div class="col-lg-4 col-md-6">
+      <div class="card project-card">
+        <img src="project2.gif" class="card-img-top" alt="Project 2" />
+        <div class="card-body">
+          <h5 class="card-title">Project 2</h5>
+          <p class="card-text">Description of Project 2.</p>
+          <a href="#" class="btn btn-primary">Learn More</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-4 col-md-6">
+      <div class="card project-card">
+        <img src="project3.gif" class="card-img-top" alt="Project 3" />
+        <div class="card-body">
+          <h5 class="card-title">Project 3</h5>
+          <p class="card-text">Description of Project 3.</p>
+          <a href="#" class="btn btn-primary">Learn More</a>
+        </div>
+      </div>
+    </div> {% endcomment %}
+    <!-- Add more project cards as needed -->
+  </div>
+</div>
+{% endblock content%}
