@@ -2,11 +2,42 @@
 
 <title>Marco Acea | Under Construction</title>
 
+<style>
+  /* CSS Typing Animation */
+  .typing-animation {
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 0.15em solid orange; /* Change the color as desired */
+    animation: typing 2s steps(40, end), blink-caret 0.5s step-end infinite;
+  }
+
+  @keyframes typing {
+    from {
+      width: 0;
+    }
+    to {
+      width: 100%;
+    }
+  }
+
+  @keyframes blink-caret {
+    from,
+    to {
+      border-color: transparent;
+    }
+    50% {
+      border-color: orange; /* Change the color as desired */
+    }
+  }
+</style>
+
 {% endblock header %} {% block content %}
 <div class="container">
   <div class="row">
-    <div class="col">
-      <h1>This page is still under construction, check back soon!</h1>
+    <div class="col-auto">
+      <p class="typing-animation">
+        This page is still under construction, check back soon!
+      </p>
     </div>
   </div>
 </div>
