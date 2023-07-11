@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Blur or Fade Right End of Div</title>
+    <style>
+      .custom-div {
+        width: 300px;
+        height: 200px;
+        background: linear-gradient(
+          to right,
+          rgba(255, 255, 255, 1),
+          rgba(255, 255, 255, 0)
+        );
+        position: relative;
+      }
+
+      .custom-div::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 30px;
+        height: 100%;
+        background: linear-gradient(
+          to left,
+          rgba(255, 255, 255, 1),
+          rgba(255, 255, 255, 0)
+        );
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="custom-div">
+      This is a custom div with the right end blurred or faded.
+    </div>
+  </body>
+</html>

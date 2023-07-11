@@ -85,3 +85,6 @@ __pycache__/
 # Ignore sensitive information
 /secret.json
 
+# Misc
+**/.DS_Store
+
