@@ -3,6 +3,7 @@ from django.http import HttpResponseForbidden
 import os
 import json
 from jsonschema import validate
+from django.conf import settings
 
 
 home = lambda request: render(request, "home.html")
@@ -42,7 +43,14 @@ def validate_projects_json(
 
 
 def projects(request):
-    try:
+    # TODO: Kanji Trainer
+    # TODO: Parthean SlackBot
+    # TODO: ArgoCD AppSource Controller
+    # TODO: GraphQL Rate Limiter
+    # TODO: Boeing ESEC Tool
+    # TODO: Embedded Control System Projects
+    # TODO: Speech Signal Processing Library from Capstone
+    if settings.DEBUG:
         # Assuming projects.json is in the same directory as views.py
         file_path = os.path.join(os.path.dirname(__file__), "projects.json")
         validate_projects_json(projects_file_path=file_path)
@@ -53,5 +61,17 @@ def projects(request):
         context = {"projects": projects_data["projects"]}
 
         return render(request, "projects.html", context)
-    except:
-        return under_construction(request)
+    else:
+        try:
+            # Assuming projects.json is in the same directory as views.py
+            file_path = os.path.join(os.path.dirname(__file__), "projects.json")
+            validate_projects_json(projects_file_path=file_path)
+
+            with open(file_path, "r") as projects_file:
+                projects_data = json.load(projects_file)
+
+            context = {"projects": projects_data["projects"]}
+
+            return render(request, "projects.html", context)
+        except:
+            return under_construction(request)
