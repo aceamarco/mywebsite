@@ -56,7 +56,7 @@ ROOT_URLCONF = "mywebsite.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [],
+        "DIRS": [os.path.join(BASE_DIR, "mywebsite", "templates")],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
@@ -128,8 +128,7 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 # see https://help.pythonanywhere.com/pages/DjangoStaticFiles for more info
 MEDIA_ROOT = "/home/aceamarco/mywebsite/media"
 MEDIA_URL = "/media/"
-# TODO: Change this before sending to pythonanywhere remote server
-# STATIC_ROOT = os.path.join(BASE_DIR, "static/")
+
 STATICFILES_DIRS = [
     # Add the path to your static files directory
     os.path.join(BASE_DIR, "static"),
