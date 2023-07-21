@@ -28,5 +28,12 @@
       "imagePaths": ["gifs/My_Git_JSON_Resume.gif"],
       "description": "Using the open source project, JSON Resume, I created a Github Repository with Github Actions that let's you version control the information on your resume. The project generates pdfs and html files in over 250+ themes, which can be posted online using Github Pages!"
     }
+    // TODO: Kanji Trainer
+    // TODO: Parthean SlackBot
+    // TODO: ArgoCD AppSource Controller
+    // TODO: GraphQL Rate Limiter
+    // TODO: Boeing ESEC Tool
+    // TODO: Embedded Control System Projects
+    // TODO: Speech Signal Processing Library from Capstone
   ]
 }
