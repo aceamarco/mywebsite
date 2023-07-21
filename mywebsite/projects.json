@@ -3,7 +3,11 @@
     {
       "title": "Pokemon Air Force 1's",
       "tags": ["Python", "Selenium", "Math"],
-      "imagePaths": ["gifs/Tepig_AF1_Demo.gif", "498.png", "445.png"],
+      "imagePaths": [
+        "gifs/Tepig_AF1_Demo.gif",
+        "images/498.png",
+        "images/445.png"
+      ],
       "description": "Built with Python, uses Selenium to navigate the Nike website and build Air Force One's inspired by the color palette of any pokemon!"
     },
     {
@@ -17,6 +21,12 @@
       "tags": ["Python", "Logic", "Pygame"],
       "imagePaths": ["gifs/Minesweeper_AI.gif"],
       "description": "A simple Minesweeper AI that uses logical induction to solve a Minesweeper puzzle. This project was completed as a part of Harvard CS50's Introduction to Artificial Intelligence with Python."
+    },
+    {
+      "title": "My Git-JSON Resume",
+      "tags": ["Git", "DevOps"],
+      "imagePaths": ["gifs/My_Git_JSON_Resume.gif"],
+      "description": "Using the open source project, JSON Resume, I created a Github Repository with Github Actions that let's you version control the information on your resume. The project generates pdfs and html files in over 250+ themes, which can be posted online using Github Pages!"
     }
   ]
 }
