@@ -1,0 +1,22 @@
+{
+  "projects": [
+    {
+      "title": "Pokemon Air Force 1's",
+      "tags": ["Python", "Selenium", "Math"],
+      "imagePaths": ["gifs/Tepig_AF1_Demo.gif", "498.png", "445.png"],
+      "description": "Built with Python, uses Selenium to navigate the Nike website and build Air Force One's inspired by the color palette of any pokemon!"
+    },
+    {
+      "title": "This Website!",
+      "tags": ["Python", "Django", "HTML", "CSS", "Javascript"],
+      "imagePaths": ["gifs/Website_Walkthrough.gif"],
+      "description": "My personal website! Hosted from PythonAnywhere, uses a Django Backend and the Bootstrap UI library to bring you this page!"
+    },
+    {
+      "title": "Minesweeper AI (CS50AI)",
+      "tags": ["Python", "Logic", "Pygame"],
+      "imagePaths": ["gifs/Minesweeper_AI.gif"],
+      "description": "A simple Minesweeper AI that uses logical induction to solve a Minesweeper puzzle. This project was completed as a part of Harvard CS50's Introduction to Artificial Intelligence with Python."
+    }
+  ]
+}
