@@ -1,78 +1,111 @@
-{% for project in projects %}
-<div class="col-lg-4 col-md-6">
-  <div class="card project-card">
-    {% if project.imagePaths|length > 1 %}
-    <div
-      id="imageCarousel"
-      class="carousel slide carousel-container"
-      data-ride="carousel"
-    >
-      <ol class="carousel-indicators">
-        {% for index in project.imagePaths %}
-        <li
-          data-target="#imageCarousel"
-          data-slide-to="{{ index }}"
-          {%
-          if
-          forloop.first
-          %}class="active"
-          {%
-          endif
-          %}
-        ></li>
-        {% endfor %}
-      </ol>
-      <div class="carousel-inner">
-        {% for image_path in project.imagePaths %}
-        <div class="carousel-item {% if forloop.first %}active{% endif %}">
-          <img
-            src="{% static image_path %}"
-            class="d-block w-100"
-            alt="Image {{ forloop.counter }}"
-          />
-        </div>
-        {% endfor %}
-      </div>
-      <a
-        class="carousel-control-prev"
-        href="#imageCarousel"
-        role="button"
-        data-slide="prev"
-      >
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-      </a>
-      <a
-        class="carousel-control-next"
-        href="#imageCarousel"
-        role="button"
-        data-slide="next"
-      >
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-      </a>
-    </div>
-    {% else %}
-    <img
-      src="{% static project.imagePaths.0 %}"
-      class="d-block w-100"
-      alt="Image 1"
-    />
-    {% endif %}
-    <div class="card-body">
-      <div
-        class="card-tag-container"
-        style="overflow-x: auto; white-space: nowrap; scrollbar-width: none"
-      >
-        {% for tag in project.tags %}
-        <span class="badge badge-pill badge-secondary card-tag-badge"
-          >{{ tag }}</span
+{% extends 'base.html' %} {% load static %} {% block header %}
+<title>Marco Acea | Projects</title>
+<style>
+  /* Custom CSS styles */
+  .project-card {
+    margin-bottom: 20px;
+  }
+
+  .card-tag-container {
+    overflow-x: auto;
+    white-space: nowrap;
+    scrollbar-width: none;
+    margin-bottom: 5px;
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  .card-tag-container::-webkit-scrollbar {
+    display: none;
+  }
+
+  .card-tag-badge {
+    margin-right: 5px;
+  }
+
+  .carousel-container img {
+    object-fit: cover; /* Ensure images fill the container without distortion */
+    height: 100%; /* Maintain the height of the container */
+    width: 100%; /* Automatically adjust the width */
+  }
+</style>
+{%endblock header%} {% block content %} {% comment %} TODO: Add a filter by tag
+feature {% endcomment %}
+<div class="container">
+  <h1 style="margin-bottom: 3.5%">Projects</h1>
+  <div class="row">
+    {% for project in projects %}
+    <div class="col-lg-4 col-md-6">
+      <div class="card project-card">
+        <div
+          id="imageCarousel"
+          class="carousel slide carousel-container"
+          data-ride="carousel"
         >
-        {% endfor %}
+          <ol class="carousel-indicators">
+            {% for index in project.imagePaths %}
+            <li
+              data-target="#imageCarousel"
+              data-slide-to="{{ index }}"
+              {%
+              if
+              forloop.first
+              %}class="active"
+              {%
+              endif
+              %}
+            ></li>
+            {% endfor %}
+          </ol>
+          <div class="carousel-inner">
+            {% for image_path in project.imagePaths %}
+            <div class="carousel-item {% if forloop.first %}active{% endif %}">
+              <img
+                src="{% static image_path %}"
+                class="d-block w-100"
+                alt="Image {{ forloop.counter }}"
+              />
+            </div>
+            {% endfor %}
+          </div>
+          {% if project.imagePaths|length > 1 %}
+          <a
+            class="carousel-control-prev"
+            href="#imageCarousel"
+            role="button"
+            data-slide="prev"
+          >
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a
+            class="carousel-control-next"
+            href="#imageCarousel"
+            role="button"
+            data-slide="next"
+          >
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+          {% endif %}
+        </div>
+        <div class="card-body">
+          <div
+            class="card-tag-container"
+            style="overflow-x: auto; white-space: nowrap; scrollbar-width: none"
+          >
+            {% for tag in project.tags %}
+            <span class="badge badge-pill badge-secondary card-tag-badge"
+              >{{ tag }}</span
+            >
+            {% endfor %}
+          </div>
+          <h5 class="card-title">{{ project.title }}</h5>
+          <p class="card-text">{{ project.description }}</p>
+        </div>
       </div>
-      <h5 class="card-title">{{ project.title }}</h5>
-      <p class="card-text">{{ project.description }}</p>
     </div>
+    {% endfor %} {% endblock content%}
   </div>
 </div>
-{% endfor %}
