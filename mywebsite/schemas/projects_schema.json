@@ -10,6 +10,21 @@
           "title": {
             "type": "string"
           },
+          "links": {
+            "type": "object",
+            "properties": {
+              "github": {
+                "type": "string"
+              },
+              "medium": {
+                "type": "string"
+              },
+              "youtube": {
+                "type": "string"
+              }
+            },
+            "additionalProperties": true
+          },
           "date": {
             "type": "string"
           },

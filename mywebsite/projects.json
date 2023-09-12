@@ -12,6 +12,10 @@
     },
     {
       "title": "This Website!",
+      "links": {
+        "github": "https://github.com/aceamarco/mywebsite",
+        "youtube": "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+      },
       "tags": ["Python", "Django", "HTML", "CSS", "Javascript"],
       "imagePaths": ["gifs/Website_Walkthrough.gif"],
       "description": "My personal website! Hosted from PythonAnywhere, uses a Django Backend and the Bootstrap UI library to bring you this page!"
