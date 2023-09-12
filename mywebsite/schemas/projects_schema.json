@@ -10,6 +10,9 @@
           "title": {
             "type": "string"
           },
+          "date": {
+            "type": "string"
+          },
           "tags": {
             "type": "array",
             "items": {
