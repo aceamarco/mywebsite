@@ -49,7 +49,9 @@ feature {% endcomment %}
           class="carousel slide carousel-container"
           data-ride="carousel"
         >
-          <ol class="carousel-indicators">
+          <ol
+            class="{% if project.imagePaths|length > 1 %}carousel-indicators{% endif %}"
+          >
             {% for index in project.imagePaths %}
             <li
               data-target="#imageCarousel"
@@ -66,9 +68,7 @@ feature {% endcomment %}
           </ol>
           <div class="carousel-inner">
             {% for image_path in project.imagePaths %}
-            <div
-              class="{% if project.imagePaths|length > 1 %}carousel-item{% endif %} {% if forloop.first %}active{% endif %}"
-            >
+            <div class="carousel-item {% if forloop.first %}active{% endif %}">
               <img
                 src="{% static image_path %}"
                 class="d-block w-100"
