@@ -37,4 +37,6 @@ This is my public repo for my personal website at [aceamarco.pythonanywhere.com]
 
 - [ ] Add In-Progress, Maintaining, Archived Tags to each project
 
- -[ ] Add Spotify Web Player integration
+- [ ] Add Spotify Web Player integration
+
+- [ ] Add a footer to the website, add link to source  
