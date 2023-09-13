@@ -36,3 +36,5 @@ This is my public repo for my personal website at [aceamarco.pythonanywhere.com]
         - Dark Wood Brown, Eggshell White, Yellow, Black, Green (Forest, Basil, Mint)
 
 - [ ] Add In-Progress, Maintaining, Archived Tags to each project
+
+ -[ ] Add Spotify Web Player integration
