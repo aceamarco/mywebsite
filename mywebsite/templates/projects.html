@@ -125,6 +125,13 @@ feature {% endcomment %}
             class="btn btn-outline-danger"
             ><i class="fa fa-youtube-play"></i
           ></a>
+          {% endif %} {% if project.links.medium %}
+          <a
+            href="{{ project.links.medium }}"
+            target="_blank"
+            class="btn btn-outline-dark"
+            ><i class="fa fa-brands fa-medium"></i
+          ></a>
           {% endif %}
         </div>
       </div>

@@ -28,6 +28,10 @@
     },
     {
       "title": "My Git-JSON Resume",
+      "links": {
+        "github": "https://github.com/aceamarco/resume",
+        "medium": "https://medium.com/@aceamarco/resumes-a-programmers-perspective-automating-resume-making-with-github-actions-ef484e3a6b07"
+      },
       "tags": ["Git", "DevOps"],
       "imagePaths": ["gifs/My_Git_JSON_Resume.gif"],
       "description": "Using the open source project, JSON Resume, I created a Github Repository with Github Actions that let's you version control the information on your resume. The project generates pdfs and html files in over 250+ themes, which can be posted online using Github Pages!"

@@ -73,5 +73,7 @@ def projects(request):
             context = {"projects": projects_data["projects"]}
 
             return render(request, "projects.html", context)
-        except:
+        except Exception as e:  # Capture the exception
+            if settings.DEBUG:
+                raise e  # Re-raise the exception if debug is true
             return under_construction(request)
