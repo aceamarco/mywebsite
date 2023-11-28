@@ -2,6 +2,7 @@
   "projects": [
     {
       "title": "Pokemon Air Force 1's",
+      "status": "In-Progress",
       "tags": ["Python", "Selenium", "Math"],
       "imagePaths": [
         "gifs/Tepig_AF1_Demo.gif",
@@ -12,6 +13,7 @@
     },
     {
       "title": "This Website!",
+      "status": "Maintaining",
       "links": {
         "github": "https://github.com/aceamarco/mywebsite"
       },
@@ -21,12 +23,14 @@
     },
     {
       "title": "Minesweeper AI (CS50AI)",
+      "status": "Archived",
       "tags": ["Python", "Logic", "Pygame"],
       "imagePaths": ["gifs/Minesweeper_AI.gif"],
       "description": "A simple Minesweeper AI that uses logical induction to solve a Minesweeper puzzle. This project was completed as a part of Harvard CS50's Introduction to Artificial Intelligence with Python."
     },
     {
       "title": "My Git-JSON Resume",
+      "status": "Maintaining",
       "links": {
         "github": "https://github.com/aceamarco/resume",
         "medium": "https://medium.com/@aceamarco/resumes-a-programmers-perspective-automating-resume-making-with-github-actions-ef484e3a6b07"

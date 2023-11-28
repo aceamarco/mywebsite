@@ -100,7 +100,19 @@ tag feature {% endcomment %}
             class="card-tag-container"
             style="overflow-x: auto; white-space: nowrap; scrollbar-width: none"
           >
-            {% for tag in project.tags %}
+            {% if project.status %} {% if project.status == "In-Progress" %}
+            <span class="badge badge-pill badge-success card-tag-badge">
+              {{ project.status }}
+            </span>
+            {% elif project.status == "Maintaining" %}
+            <span class="badge badge-pill badge-info card-tag-badge">
+              {{ project.status }}
+            </span>
+            {% elif project.status == "Archived" %}
+            <span class="badge badge-pill badge-dark card-tag-badge">
+              {{ project.status }}
+            </span>
+            {% endif %} {% endif %} {% for tag in project.tags %}
             <span class="badge badge-pill badge-secondary card-tag-badge"
               >{{ tag }}</span
             >

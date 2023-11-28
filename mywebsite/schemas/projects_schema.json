@@ -42,9 +42,13 @@
           },
           "description": {
             "type": "string"
+          },
+          "status": {
+            "type": "string",
+            "enum": ["In-Progress", "Maintaining", "Archived"]
           }
         },
-        "required": ["title", "tags", "imagePaths", "description"],
+        "required": ["title", "tags", "imagePaths", "description", "status"],
         "additionalProperties": false
       }
     }
