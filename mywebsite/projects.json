@@ -13,8 +13,7 @@
     {
       "title": "This Website!",
       "links": {
-        "github": "https://github.com/aceamarco/mywebsite",
-        "youtube": "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+        "github": "https://github.com/aceamarco/mywebsite"
       },
       "tags": ["Python", "Django", "HTML", "CSS", "Javascript"],
       "imagePaths": ["gifs/Website_Walkthrough.gif"],

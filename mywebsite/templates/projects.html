@@ -7,9 +7,12 @@
   }
 
   .project-card:hover {
-    background-color: rgba(0, 0, 0, 0.05); /* Adjust opacity to your liking */
-    transition: background-color 0.3s ease; /* Add a smooth transition effect */
-    cursor: pointer; /* Change cursor to a hand */
+    background-color: rgba(0, 0, 0, 0.05);
+    /* Adjust opacity to your liking */
+    transition: background-color 0.3s ease;
+    /* Add a smooth transition effect */
+    cursor: pointer;
+    /* Change cursor to a hand */
   }
 
   .card-tag-container {
@@ -17,8 +20,10 @@
     white-space: nowrap;
     scrollbar-width: none;
     margin-bottom: 5px;
-    -ms-overflow-style: none; /* IE and Edge */
-    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
   }
 
   /* Hide scrollbar for Chrome, Safari and Opera */
@@ -31,19 +36,29 @@
   }
 
   .carousel-container img {
-    object-fit: cover; /* Ensure images fill the container without distortion */
-    height: 100%; /* Maintain the height of the container */
-    width: 100%; /* Automatically adjust the width */
+    object-fit: cover;
+    /* Ensure images fill the container without distortion */
+    height: 100%;
+    /* Maintain the height of the container */
+    width: 100%;
+    /* Automatically adjust the width */
   }
 </style>
-{%endblock header%} {% block content %} {% comment %} TODO: Add a filter by tag
-feature {% endcomment %}
+{% endblock header %} {% block content %} {% comment %} TODO: Add a filter by
+tag feature {% endcomment %}
 <div class="container">
   <h1 style="margin-bottom: 3.5%">Projects</h1>
   <div class="row">
     {% for project in projects %}
     <div class="col-lg-4 col-md-6">
-      <div class="card project-card">
+      <div
+        id="projectCard{{ forloop.counter }}"
+        onClick="(function(event, counter) {
+          event.stopPropagation();
+          $('#projectCard' + counter + '-modal').modal('toggle');
+        })(event, '{{ forloop.counter }}')"
+        class="card project-card"
+      >
         <div
           id="imageCarousel"
           class="carousel slide carousel-container"
@@ -77,27 +92,9 @@ feature {% endcomment %}
             </div>
             {% endfor %}
           </div>
-          {% if project.imagePaths|length > 1 %}
-          <a
-            class="carousel-control-prev"
-            href="#imageCarousel"
-            role="button"
-            data-slide="prev"
-          >
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-          </a>
-          <a
-            class="carousel-control-next"
-            href="#imageCarousel"
-            role="button"
-            data-slide="next"
-          >
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-          </a>
-          {% endif %}
         </div>
+        {% comment %} add code here so that when a user clicks on the card the
+        modal screen pops up {% endcomment %}
         <div class="card-body">
           <div
             class="card-tag-container"
@@ -115,27 +112,112 @@ feature {% endcomment %}
           <a
             href="{{ project.links.github }}"
             target="_blank"
-            class="btn btn-outline-dark"
+            class="btn btn-outline-dark stopPropagation"
             ><i class="fa fa-github"></i
           ></a>
           {% endif %} {% if project.links.youtube %}
           <a
             href="{{ project.links.youtube }}"
             target="_blank"
-            class="btn btn-outline-danger"
+            class="btn btn-outline-danger stopPropagation"
             ><i class="fa fa-youtube-play"></i
           ></a>
           {% endif %} {% if project.links.medium %}
           <a
             href="{{ project.links.medium }}"
             target="_blank"
-            class="btn btn-outline-dark"
+            class="btn btn-outline-dark stopPropagation"
             ><i class="fa fa-brands fa-medium"></i
           ></a>
           {% endif %}
         </div>
       </div>
     </div>
-    {% endfor %} {% endblock content%}
+    <!-- Vertically centered modal -->
+    <div
+      id="projectCard{{ forloop.counter }}-modal"
+      class="modal fade"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalCenterTitle">
+              {{ project.title }}
+            </h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">×</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <!-- Bootstrap Carousel -->
+            <div
+              id="carouselExample"
+              class="carousel slide"
+              data-ride="carousel"
+            >
+              <div class="carousel-inner">
+                {% for image_path in project.imagePaths %}
+                <div
+                  class="carousel-item {% if forloop.first %}active{% endif %}"
+                >
+                  <img
+                    src="{% static image_path %}"
+                    class="d-block w-100"
+                    alt="Image {{ forloop.counter }}"
+                  />
+                </div>
+                {% endfor %}
+              </div>
+              {% if project.imagePaths|length > 1 %}
+              <a
+                class="carousel-control-prev"
+                href="#carouselExample"
+                role="button"
+                data-slide="prev"
+              >
+                <span
+                  class="carousel-control-prev-icon"
+                  aria-hidden="true"
+                ></span>
+                <span class="sr-only">Previous</span>
+              </a>
+              <a
+                class="carousel-control-next"
+                href="#carouselExample"
+                role="button"
+                data-slide="next"
+              >
+                <span
+                  class="carousel-control-next-icon"
+                  aria-hidden="true"
+                ></span>
+                <span class="sr-only">Next</span>
+              </a>
+              {% endif %}
+            </div>
+            <!-- End of Bootstrap Carousel -->
+
+            <p>{{ project.description }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {% endfor %}
   </div>
 </div>
+{% endblock content %} {% block extraScripts %}
+<script>
+  $(".stopPropagation").click((event) => {
+    event.stopPropagation();
+  });
+</script>
+{% endblock extraScripts %}
