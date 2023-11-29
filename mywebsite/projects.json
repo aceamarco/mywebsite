@@ -38,6 +38,17 @@
       "tags": ["Git", "DevOps"],
       "imagePaths": ["gifs/My_Git_JSON_Resume.gif"],
       "description": "Using the open source project, JSON Resume, I created a Github Repository with Github Actions that let's you version control the information on your resume. The project generates pdfs and html files in over 250+ themes, which can be posted online using Github Pages!"
+    },
+    {
+      "title": "ArgoCD AppSource Controller",
+      "status": "Archived",
+      "links": {
+        "github": "https://github.com/argoproj-labs/appsource",
+        "medium": "https://medium.com/argo-project/introducing-the-appsource-controller-for-argocd-52f21d28d643"
+      },
+      "tags": ["DevOps", "Golang", "Kubernetes"],
+      "imagePaths": ["images/argocd.webp"],
+      "description": "A decentralized manager for ArgoCD Applications hosted on a kubernetes cluster — allows sub-admins to create and manage their own applications on the ArgoCD platform."
     }
   ]
 }
