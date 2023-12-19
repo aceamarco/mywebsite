@@ -2,6 +2,15 @@
 {% extends 'base.html' %} {%block header %}
 
 <title>Marco Acea | Home</title>
+<style>
+  .hidden {
+    opacity: 0.3;
+  }
+
+  .show {
+    opacity: 1;
+  }
+</style>
 
 {% endblock header %} {% block content %}
 <!-- Bio Section -->
@@ -51,12 +60,32 @@
       </div>
     </div>
   </div>
+  <div class="row justify-content-center">
+    <div class="column">
+      <div class="hidden">{% include 'projects_cards.html' %}</div>
+    </div>
+  </div>
 </div>
 
 <!-- Scripts -->
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("show");
+        entry.target.style.opacity = entry.intersectionRatio;
+      } else {
+        entry.target.classList.remove("show");
+      }
+    });
+  });
+
+  const hiddenElements = document.querySelectorAll(".hidden");
+  hiddenElements.forEach((el) => observer.observe(el));
+</script>
 {% endblock %} {% block footer %}
 <!-- Footer -->
 <footer class="fixed-bottom">
