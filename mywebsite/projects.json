@@ -49,6 +49,20 @@
       "tags": ["DevOps", "Golang", "Kubernetes"],
       "imagePaths": ["images/argocd.webp"],
       "description": "A decentralized manager for ArgoCD Applications hosted on a kubernetes cluster — allows sub-admins to create and manage their own applications on the ArgoCD platform."
+    },
+    {
+      "title": "WaniGrami",
+      "status": "In-Progress",
+      "tags": [
+        "Electron",
+        "Javascript",
+        "React",
+        "Natural Language Processing",
+        "Spaced Repetition Systems",
+        "Web Design"
+      ],
+      "imagePaths": ["images/wani_grami.png"],
+      "description": "Inspired by WaniKani, a Japanese Language Learning Tool, Wani-Grami combines your wanikani vocabulary with large-language models like Llama2 to help you practice reading japanese using words you've already learned. Goodbye graded readers!"
     }
   ]
 }
