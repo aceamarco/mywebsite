@@ -1,6 +1,13 @@
 {
   "projects": [
     {
+      "title": "Quantified Self Dashboard",
+      "status": "In-Progress",
+      "tags": ["React", "Javascript", "Statistics"],
+      "imagePaths": ["gifs/Quantified_Self_Chart.gif"],
+      "description": "Built with React, this simple dashboard displays useful statistics collected from a smart scale! My goal was to create an interface that can keep users motivated by showing them the \"big picture\" of their day to day health progress!"
+    },
+    {
       "title": "Pokemon Air Force 1's",
       "status": "In-Progress",
       "tags": ["Python", "Selenium", "Math"],
