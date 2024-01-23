@@ -6,9 +6,7 @@ from jsonschema import validate
 from django.conf import settings
 
 
-home = lambda request: render(request, "home.html")
 resume = lambda request: render(request, "resume.html")
-
 under_construction = lambda request: render(request, "under_construction.html")
 about = under_construction
 contact = under_construction
@@ -42,10 +40,39 @@ def validate_projects_json(
         print("projects.json data is invalid. Error: ", e)
 
 
+def home(request):
+    if settings.DEBUG:
+        # Assuming projects.json is in the same directory as views.py
+        file_path = os.path.join(os.path.dirname(__file__), "projects.json")
+        validate_projects_json(projects_file_path=file_path)
+
+        with open(file_path, "r") as projects_file:
+            projects_data = json.load(projects_file)
+
+        context = {"projects": projects_data["projects"]}
+
+        return render(request, "home.html", context)
+    else:
+        try:
+            # Assuming projects.json is in the same directory as views.py
+            file_path = os.path.join(os.path.dirname(__file__), "projects.json")
+            validate_projects_json(projects_file_path=file_path)
+
+            with open(file_path, "r") as projects_file:
+                projects_data = json.load(projects_file)
+
+            context = {"projects": projects_data["projects"]}
+
+            return render(request, "home.html", context)
+        except Exception as e:  # Capture the exception
+            if settings.DEBUG:
+                raise e  # Re-raise the exception if debug is true
+            return under_construction(request)
+
+
 def projects(request):
     # TODO: Kanji Trainer
     # TODO: Parthean SlackBot
-    # TODO: ArgoCD AppSource Controller
     # TODO: GraphQL Rate Limiter
     # TODO: Boeing ESEC Tool
     # TODO: Embedded Control System Projects

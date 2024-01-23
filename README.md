@@ -27,16 +27,37 @@ This is my public repo for my personal website at [aceamarco.pythonanywhere.com]
 - [ ] Add a filter menu to the projects page
 
 - [ ] Add a sort menu to the projects page
-    - Potential sorting fields include: Featured, Name, Date Created 
+
+  - Potential sorting fields include: Featured, Name, Date Created
 
 - [ ] Add a calendar or meeting integration to the contact page
 
 - [ ] Investigate possible color themes for your website so that it's not just white
-    - Possible Palettes that I enjoy:
-        - Dark Wood Brown, Eggshell White, Yellow, Black, Green (Forest, Basil, Mint)
+
+  - Possible Palettes that I enjoy:
+    - Dark Wood Brown, Eggshell White, Yellow, Black, Green (Forest, Basil, Mint)
 
 - [ ] Add In-Progress, Maintaining, Archived Tags to each project
 
 - [ ] Add Spotify Web Player integration
 
-- [ ] Add a footer to the website, add link to source  
+- [ ] Add a footer to the website, add link to source
+
+- [ ] Add WaniGrami back into projects page
+
+```
+// {
+//   "title": "WaniGrami",
+//   "status": "In-Progress",
+//   "tags": [
+//     "Electron",
+//     "Javascript",
+//     "React",
+//     "Natural Language Processing",
+//     "Spaced Repetition Systems",
+//     "Web Design"
+//   ],
+//   "imagePaths": ["images/wani_grami.png"],
+//   "description": "Inspired by WaniKani, a Japanese Language Learning Tool, Wani-Grami combines your wanikani vocabulary with large-language models like Llama2 to help you practice reading japanese using words you've already learned. Goodbye graded readers!"
+// }
+```
