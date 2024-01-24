@@ -61,3 +61,5 @@ This is my public repo for my personal website at [aceamarco.pythonanywhere.com]
 //   "description": "Inspired by WaniKani, a Japanese Language Learning Tool, Wani-Grami combines your wanikani vocabulary with large-language models like Llama2 to help you practice reading japanese using words you've already learned. Goodbye graded readers!"
 // }
 ```
+
+- Add path to resume.json or permit "resume" subobject in projects.json
