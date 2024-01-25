@@ -39,7 +39,6 @@ db.sqlite3
 .env.*.test
 
 # IDE-specific files
-.vscode/
 .idea/
 *.iml
 *.ipr

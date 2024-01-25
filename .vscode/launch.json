@@ -1,0 +1,15 @@
+{
+    "configurations": [
+        {
+            "name": "Run Local Server",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}\\manage.py",
+            "args": [
+                "runserver"
+            ],
+            "django": true,
+            "justMyCode": true
+        }
+    ]
+}
